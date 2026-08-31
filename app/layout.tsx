@@ -4,12 +4,10 @@ import "./globals.css";
 
 import { AppShell } from "@/components/app-shell";
 import { AppProvider } from "@/components/providers";
-
-const appUrl =
-  process.env.NEXT_PUBLIC_APP_URL ?? "https://meridian-journal.vercel.app";
+import { siteUrl } from "@/lib/site-url";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(appUrl),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Meridian — Trading Plan & Journal",
     template: "%s · Meridian",
