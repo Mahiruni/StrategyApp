@@ -1,7 +1,8 @@
-const vercelHost =
-  process.env.VERCEL_PROJECT_PRODUCTION_URL ?? process.env.VERCEL_URL;
+const productionHost = process.env.VERCEL_PROJECT_PRODUCTION_URL;
 
 export const siteUrl = (
   process.env.NEXT_PUBLIC_APP_URL ??
-  (vercelHost ? `https://${vercelHost}` : "http://localhost:3000")
+  (productionHost
+    ? `https://${productionHost}`
+    : "https://strategyapp-hisab.vercel.app")
 ).replace(/\/$/, "");
